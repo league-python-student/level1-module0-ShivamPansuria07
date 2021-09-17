@@ -22,14 +22,17 @@ def test_2_generate_a_list():
 def test_3_product(list_1):
     sum = list_1[1] * list_1[2]
     sum2 = list_1[2] * list_1[3]
-    total = sum * sum2
-    return -10
+    total = -sum * sum2
+    if list_1.__contains__(0):
+        return 0
+    return total
 
 
 # TODO Complete the function so it returns a list with all the elements from
 #  list_1 followed by items in list_2
 def test_4_combine_lists(list_1, list_2):
-    return list()
+    list1 = list_1 + list_2
+    return list1
 
 # ======================= DO NOT EDIT THE CODE BELOW =========================
 

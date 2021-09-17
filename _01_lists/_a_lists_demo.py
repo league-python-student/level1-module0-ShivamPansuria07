@@ -72,6 +72,7 @@ if __name__ == '__main__':
     # Method #1: Iterating (looping) through all items in list with an index
     num_items = len(my_list)
     for index in range(num_items):
+    for index in range(num_items):
         print(index, my_list[index], end='; ')
 
     print()
