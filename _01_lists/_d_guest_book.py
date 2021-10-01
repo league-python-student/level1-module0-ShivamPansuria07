@@ -21,7 +21,7 @@ def add_guest(list_of_guests):
 #         c. Return the list_of_guests
 def remove_guest(list_of_guests):
     remove = simpledialog.askstring(None, "Enter a name for the guest to remove")
-    if list_of_guests.__contains__(remove):
+    if remove in list_of_guests:
         list_of_guests.remove(remove)
 
     return list_of_guests
@@ -29,12 +29,17 @@ def remove_guest(list_of_guests):
 # TODO 3) Complete the function by:
 #         a. Display the names of the guests in the following format:
 #            Guest 1. Alan
+
 #            Guest 2. Maria
 #            Guest 3. Jin
 #         b. If there are no guests, print "There are no guests"
+
 def print_guests(list_of_guests):
+    num = 0
     for i in list_of_guests:
-        messagebox.showinfo(title = "Guests", message = "Guest 1. "+ list_of_guests[0])
+        num +=1
+        print("Guest "+ str(num) +". "+ str(i))
+        # messagebox.showinfo(title = "Guests", message = "Guest 1. " + "\n" + "Guest 2." + list_of_guests[0])
     pass
 
 # ======================= DO NOT EDIT THE CODE BELOW =========================

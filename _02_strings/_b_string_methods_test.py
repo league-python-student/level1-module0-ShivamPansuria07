@@ -12,28 +12,37 @@ import unittest
 
 # Given Strings s1 and s2, return the longer String
 def find_longer_string(s1, s2):
+    num1 = len(s1)
+    num2 = len(s2)
+    if num2>num1:
+        return s2
+    else:
+        return s1
 
-    return None
 
 
 # If String s contains the word "underscores", change all of the spaces to
 # underscores
 def format_spaces(s1):
-
-    return None
+    if "underscores" in s1:
+        s1 = s1.replace(' ', '_')
+        return s1
+    else:
+        return s1
 
 
 # Return the number of times String substring appears in String s
 def substring_count(s, substring):
-
-    return None
-
+    num_character = s.count(substring)
+    return num_character
 
 # Return true if String s is a palindrome
 # palindromes are words or phrases are read the same forward as backward.
 def palindrome(s):
-
-    return None
+  if s == s[::-1]:
+      return True
+  else:
+      return False
 
 # ======================= DO NOT EDIT THE CODE BELOW =========================
 

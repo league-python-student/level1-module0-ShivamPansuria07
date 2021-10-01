@@ -7,8 +7,11 @@ from tkinter import messagebox
 #  word_to_guess = orange (a string)
 #  return          ______ (a string with 6 underscores)
 def setup_new_word(word_to_guess):
+    for i in word_to_guess:
+        s = word_to_guess.replace(i, "_")
+        word_to_guess = s
+    return s
 
-    return str()
 
 # TODO 2) Complete the function to return whether the letter is in
 #  the word to guess
@@ -16,8 +19,12 @@ def setup_new_word(word_to_guess):
 #  letter = o (a string)
 #  return True
 def check_letter_in_word(word_to_guess, letter):
+    num_character = word_to_guess.count(letter)
+    if num_character>=1:
+        return True
+    else:
+        return False
 
-    return False
 
 # TODO 3) Complete the function to return the current guess with the
 #  letter in the same places (index) of the word to guess. For example,
@@ -26,10 +33,17 @@ def check_letter_in_word(word_to_guess, letter):
 #       letter = g
 #       return o__nge (a string)
 #  Remember that strings can't be changed directly!
+
 def replace_letter_in_word(word_to_guess, current_guess, letter):
-
-    return str()
-
+    # if letter in word
+    # change the guess string into a list
+    # find where the letter is(index) in word_to_guess
+    # put the letter in the index
+    if letter in word_to_guess:
+        listguess = list(word_to_guess)
+        index = listguess.index(letter)
+        current_guess[index] = letter
+    return current_guess
 # ====================== DO NOT EDIT THE CODE BELOW ===========================
 
 class Hangman(tk.Tk):
@@ -55,7 +69,7 @@ class Hangman(tk.Tk):
         self.get_new_random_word()
 
         # UNCOMMENT TO SHOW HIDDEN WORD
-        #print(self.random_word)
+        print(self.random_word)
 
         # Setup label to display keys pressed by the user
         self.label = tk.Label(self, bg='light grey', textvariable=self.entered_text)
